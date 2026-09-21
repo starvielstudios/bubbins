@@ -1,0 +1,2245 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* ================================= */
+  /* PAGE                              */
+  /* ================================= */
+  
+  .wl-page {
+    position: relative;
+  
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+  
+    overflow-x: auto;
+    overflow-y: auto;
+  
+    padding:
+      35px
+      22px
+      25px;
+  
+    color: white;
+  
+    background:
+      url("/whitelist/whitelist-background.png")
+      center center /
+      cover
+      no-repeat;
+  }
+  
+  .wl-overlay {
+    position: absolute;
+  
+    inset: 0;
+  
+    pointer-events: none;
+  
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 25, 65, 0.04),
+        rgba(0, 30, 70, 0.01),
+        rgba(0, 20, 60, 0.07)
+      );
+  }
+  
+  
+  /* ================================= */
+  /* MAIN AREA                         */
+  /* ================================= */
+  
+  .wl-main {
+    position: relative;
+  
+    z-index: 2;
+  
+    width: 100%;
+    max-width: 1536px;
+  
+    min-height: 620px;
+  
+    margin:
+      0
+      auto;
+  
+    display: grid;
+  
+    grid-template-columns:
+      1.15fr
+      0.85fr;
+  
+    align-items: center;
+  
+    gap: 12px;
+  
+    padding:
+      0
+      60px
+      0
+      65px;
+  }
+  
+  
+  /* ================================= */
+  /* TITLE IMAGE                       */
+  /* ================================= */
+  
+  .wl-copy {
+    position: relative;
+  
+    z-index: 3;
+  
+    width: 100%;
+    max-width: 520px;
+  
+    margin-left: 420px;
+    margin-top: -15px;
+  }
+  
+  .wl-title-image {
+    display: block;
+  
+    width: 100%;
+    max-width: 500px;
+  
+    height: auto;
+  
+    object-fit: contain;
+  
+    filter:
+      drop-shadow(
+        0
+        10px
+        15px
+        rgba(0, 25, 75, 0.18)
+      );
+  }
+  
+  
+  /* ================================= */
+  /* WHITELIST BUBBLE                  */
+  /* ================================= */
+  
+  .wl-bubble-wrap {
+    position: relative;
+  
+    width: 100%;
+    max-width: 480px;
+  
+    min-height: 575px;
+  
+    margin-left: auto;
+    margin-right: 0;
+  
+    animation:
+      wlBubbleFloat
+      5.5s
+      ease-in-out
+      infinite;
+  
+    filter:
+      drop-shadow(
+        0
+        16px
+        30px
+        rgba(0, 26, 78, 0.24)
+      )
+  
+      drop-shadow(
+        0
+        0
+        12px
+        rgba(124, 224, 255, 0.35)
+      );
+  }
+  
+  .wl-bubble-svg {
+    position: absolute;
+  
+    inset: 0;
+  
+    z-index: 0;
+  
+    width: 100%;
+    height: 100%;
+  
+    overflow: visible;
+  }
+  
+  .wl-bubble-body {
+    transform-origin: center;
+  
+    filter:
+      drop-shadow(
+        0
+        0
+        5px
+        rgba(255, 255, 255, 0.65)
+      )
+  
+      drop-shadow(
+        0
+        0
+        9px
+        rgba(101, 220, 255, 0.55)
+      );
+  
+    animation:
+      wlBubbleWobble
+      6s
+      ease-in-out
+      infinite;
+  }
+  
+  
+  /* ================================= */
+  /* BUBBLE REFLECTIONS                */
+  /* ================================= */
+  
+  .wl-reflection {
+    pointer-events: none;
+  }
+  
+  .wl-reflection-top {
+    animation:
+      wlTopShimmer
+      4.5s
+      ease-in-out
+      infinite;
+  }
+  
+  .wl-reflection-left {
+    animation:
+      wlSideShimmer
+      5s
+      ease-in-out
+      infinite;
+  }
+  
+  .wl-reflection-right {
+    animation:
+      wlSideShimmer
+      5.7s
+      ease-in-out
+      infinite;
+  }
+  
+  .wl-reflection-bottom {
+    animation:
+      wlBottomShimmer
+      5.2s
+      ease-in-out
+      infinite;
+  }
+  
+  
+  /* ================================= */
+  /* MOVING LIGHT                      */
+  /* ================================= */
+  
+  .wl-light-sweep {
+    position: absolute;
+  
+    z-index: 2;
+  
+    top: -10%;
+    left: -50%;
+  
+    width: 27%;
+    height: 120%;
+  
+    transform:
+      rotate(18deg);
+  
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.19),
+        transparent
+      );
+  
+    pointer-events: none;
+  
+    animation:
+      wlLightSweep
+      7s
+      ease-in-out
+      infinite;
+  }
+  
+  
+  /* ================================= */
+  /* FORM                              */
+  /* ================================= */
+  
+  .wl-form {
+    position: relative;
+  
+    z-index: 5;
+  
+    width: 100%;
+    min-height: 575px;
+  
+    padding:
+      62px
+      43px
+      38px;
+  
+    background: transparent;
+  
+    border: none;
+  
+    color: white;
+  }
+  
+  .wl-form h3 {
+    margin: 0;
+  
+    color: white;
+  
+    font-family:
+      "Arial Rounded MT Bold",
+      "Trebuchet MS",
+      Arial,
+      sans-serif;
+  
+    font-size: 31px;
+    line-height: 1.05;
+  
+    font-weight: 900;
+  
+    text-shadow:
+      0
+      3px
+      7px
+      rgba(0, 30, 80, 0.52);
+  }
+  
+  .wl-form-subtitle {
+    margin:
+      7px
+      0
+      21px;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.94
+      );
+  
+    font-size: 17px;
+  }
+  
+  
+  /* ================================= */
+  /* INPUTS                            */
+  /* ================================= */
+  
+  .wl-field {
+    position: relative;
+  
+    height: 52px;
+  
+    margin-bottom: 11px;
+  
+    display: grid;
+  
+    grid-template-columns:
+      53px
+      1fr
+      40px;
+  
+    align-items: center;
+  
+    overflow: hidden;
+  
+    border-radius: 13px;
+  
+    border:
+      1px
+      solid
+      rgba(
+        151,
+        216,
+        255,
+        0.30
+      );
+  
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 48, 108, 0.96),
+        rgba(7, 78, 150, 0.95)
+      );
+  
+    box-shadow:
+      inset
+      0
+      1px
+      4px
+      rgba(255, 255, 255, 0.12),
+  
+      0
+      3px
+      8px
+      rgba(0, 20, 65, 0.18);
+  }
+  
+  .wl-field-icon {
+    height: 100%;
+  
+    display: grid;
+  
+    place-items: center;
+  
+    background:
+      rgba(
+        0,
+        35,
+        90,
+        0.26
+      );
+  }
+  
+  .wl-icon-img {
+    display: block;
+  
+    width: 28px;
+    height: 28px;
+  
+    object-fit: contain;
+  }
+  
+  .wl-field input {
+    width: 100%;
+    height: 100%;
+  
+    padding:
+      0
+      10px;
+  
+    border: none;
+  
+    outline: none;
+  
+    background: transparent;
+  
+    color: white;
+  
+    font-size: 14px;
+  }
+  
+  .wl-field input::placeholder {
+    color:
+      rgba(
+        222,
+        239,
+        255,
+        0.71
+      );
+  }
+  
+  .wl-field-end {
+    display: grid;
+  
+    place-items: center;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.86
+      );
+  
+    font-size: 18px;
+  }
+  
+  .wl-copy-button {
+    border: none;
+  
+    background: transparent;
+  
+    color: white;
+  
+    font-size: 19px;
+  
+    cursor: pointer;
+  }
+  
+  
+  /* ================================= */
+  /* CHECKBOXES                        */
+  /* ================================= */
+  
+  .wl-checks {
+    margin:
+      17px
+      2px
+      17px;
+  }
+  
+  .wl-checks label {
+    display: flex;
+  
+    align-items: center;
+  
+    gap: 9px;
+  
+    margin:
+      8px
+      0;
+  
+    color: white;
+  
+    font-size: 12px;
+  
+    line-height: 1.25;
+  
+    font-weight: 500;
+  
+    text-shadow:
+      0
+      1px
+      4px
+      rgba(0, 25, 70, 0.50);
+  }
+  
+  .wl-checks input {
+    width: 20px;
+    height: 20px;
+  
+    flex-shrink: 0;
+  
+    accent-color: #37b4f3;
+  }
+  
+  
+  /* ================================= */
+  /* SUBMIT                            */
+  /* ================================= */
+  
+  .wl-submit {
+    width: 100%;
+    height: 60px;
+  
+    border:
+      2px
+      solid
+      rgba(
+        255,
+        255,
+        255,
+        0.88
+      );
+  
+    border-radius: 32px;
+  
+    color: #173d80;
+  
+    background:
+      linear-gradient(
+        180deg,
+        #fff29a 0%,
+        #ffcf3c 38%,
+        #ff9d18 100%
+      );
+  
+    font-size: 21px;
+  
+    font-weight: 900;
+  
+    cursor: pointer;
+  
+    box-shadow:
+      inset
+      0
+      4px
+      8px
+      rgba(255, 255, 255, 0.78),
+  
+      0
+      4px
+      12px
+      rgba(80, 50, 0, 0.20),
+  
+      0
+      0
+      20px
+      rgba(255, 203, 55, 0.45);
+  }
+  
+  .wl-submit:hover {
+    transform:
+      translateY(-2px);
+  }
+  
+  .wl-submit span {
+    margin-left: 14px;
+  }
+  
+  .wl-form-footer {
+    margin:
+      11px
+      0
+      0;
+  
+    text-align: center;
+  
+    font-size: 12px;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.90
+      );
+  }
+  
+  
+  /* ================================= */
+  /* SMALL BUBBLES                     */
+  /* ================================= */
+  
+  .wl-edge-bubble {
+    position: absolute;
+  
+    z-index: 8;
+  
+    border-radius: 50%;
+  
+    border:
+      1.5px
+      solid
+      rgba(
+        255,
+        255,
+        255,
+        0.86
+      );
+  
+    background:
+      radial-gradient(
+        circle at 30% 25%,
+        rgba(255,255,255,0.98),
+        rgba(180,237,255,0.25) 30%,
+        rgba(82,163,225,0.07) 70%
+      );
+  
+    box-shadow:
+      inset
+      0
+      0
+      7px
+      rgba(255,255,255,0.68),
+  
+      0
+      0
+      10px
+      rgba(160,230,255,0.38);
+  
+    pointer-events: none;
+  }
+  
+  .wl-edge-bubble-1 {
+    width: 33px;
+    height: 33px;
+  
+    left: -4px;
+    bottom: 170px;
+  
+    animation:
+      wlMiniBubble1
+      4.5s
+      ease-in-out
+      infinite;
+  }
+  
+  .wl-edge-bubble-2 {
+    width: 23px;
+    height: 23px;
+  
+    right: -2px;
+    top: 100px;
+  
+    animation:
+      wlMiniBubble2
+      5s
+      ease-in-out
+      infinite;
+  }
+  
+  .wl-edge-bubble-3 {
+    width: 15px;
+    height: 15px;
+  
+    right: 25px;
+    bottom: 35px;
+  
+    animation:
+      wlMiniBubble3
+      4.2s
+      ease-in-out
+      infinite;
+  }
+  
+  
+  /* ================================= */
+  /* FOUR BOTTOM BOXES                 */
+  /* ================================= */
+  
+  .wl-benefits {
+    position: relative;
+    z-index: 5;
+  
+    width: 100%;
+    max-width: 1220px;
+  
+    margin: -14px auto 0;
+  
+    padding: 0 15px;
+  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  
+    gap: 12px;
+  
+    /* MOVE ALL 4 BOXES DOWN */
+    top: 55px;
+  }
+  
+  
+  /* REAL IMAGE AS GLASS BOX */
+  
+  .wl-benefit-card {
+    position: relative;
+  
+    min-height: 220px;
+  
+    padding:
+      16px
+      17px
+      15px;
+  
+    display: flex;
+  
+    flex-direction: column;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    text-align: center;
+  
+    background:
+      url("/whitelist/benefit-card.png")
+      center center /
+      100% 100%
+      no-repeat;
+  
+    border: none;
+  
+    border-radius: 0;
+  
+    box-shadow: none;
+  
+    overflow: visible;
+  
+    animation:
+      wlCardFloat
+      5s
+      ease-in-out
+      infinite;
+  }
+  
+  
+  /* DIFFERENT TIMING */
+  
+  .wl-benefit-card:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .wl-benefit-card:nth-child(2) {
+    animation-delay: 0.55s;
+  }
+  
+  .wl-benefit-card:nth-child(3) {
+    animation-delay: 1.1s;
+  }
+  
+  .wl-benefit-card:nth-child(4) {
+    animation-delay: 1.65s;
+  }
+  
+  
+  /* BIG ICONS */
+  
+  .wl-benefit-icon-img {
+    position: relative;
+  
+    z-index: 3;
+  
+    display: block;
+  
+    width: 112px;
+    height: 112px;
+  
+    object-fit: contain;
+  
+    margin:
+      -10px
+      auto
+      -9px;
+  
+    transform:
+      scale(1.42);
+  
+    transform-origin:
+      center center;
+  
+    filter:
+      drop-shadow(
+        0
+        5px
+        8px
+        rgba(0, 18, 55, 0.25)
+      );
+  }
+  
+  
+  /* CARD TITLE */
+  
+  .wl-benefit-card h3 {
+    position: relative;
+  
+    z-index: 4;
+  
+    width: 100%;
+  
+    margin:
+      3px
+      0
+      5px;
+  
+    color: white;
+  
+    font-family:
+      "Arial Rounded MT Bold",
+      "Trebuchet MS",
+      Arial,
+      sans-serif;
+  
+    font-size: 19px;
+  
+    line-height: 1;
+  
+    font-weight: 900;
+  
+    white-space: nowrap;
+  
+    text-shadow:
+      0
+      2px
+      5px
+      rgba(0, 25, 70, 0.72);
+  }
+  
+  
+  /* CARD DESCRIPTION */
+  
+  .wl-benefit-card p {
+    position: relative;
+  
+    z-index: 4;
+  
+    max-width: 220px;
+  
+    margin: 0 auto;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.98
+      );
+  
+    font-size: 12.5px;
+  
+    line-height: 1.25;
+  
+    font-weight: 600;
+  
+    text-shadow:
+      0
+      2px
+      4px
+      rgba(0, 25, 70, 0.70);
+  }
+  
+  
+  /* ================================= */
+  /* FOOTER                            */
+  /* ================================= */
+  
+  .wl-bottom-text {
+    position: relative;
+  
+    z-index: 3;
+  
+    margin:
+      24px
+      0
+      3px;
+  
+    text-align: center;
+  
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.86
+      );
+  
+    font-size: 12px;
+  
+    letter-spacing: 7px;
+  
+    text-shadow:
+      0
+      2px
+      5px
+      rgba(0, 20, 60, 0.45);
+  }
+  
+  
+  /* ================================= */
+  /* ANIMATIONS                        */
+  /* ================================= */
+  
+  @keyframes wlBubbleFloat {
+    0%,
+    100% {
+      transform:
+        translateY(0);
+    }
+  
+    50% {
+      transform:
+        translateY(-8px);
+    }
+  }
+  
+  @keyframes wlBubbleWobble {
+    0%,
+    100% {
+      transform:
+        scaleX(1)
+        scaleY(1);
+    }
+  
+    33% {
+      transform:
+        scaleX(1.01)
+        scaleY(0.996);
+    }
+  
+    66% {
+      transform:
+        scaleX(0.996)
+        scaleY(1.008);
+    }
+  }
+  
+  @keyframes wlTopShimmer {
+    0%,
+    100% {
+      opacity: 0.55;
+  
+      transform:
+        translateX(0);
+    }
+  
+    50% {
+      opacity: 0.95;
+  
+      transform:
+        translateX(12px);
+    }
+  }
+  
+  @keyframes wlSideShimmer {
+    0%,
+    100% {
+      opacity: 0.48;
+    }
+  
+    50% {
+      opacity: 0.90;
+    }
+  }
+  
+  @keyframes wlBottomShimmer {
+    0%,
+    100% {
+      opacity: 0.45;
+    }
+  
+    50% {
+      opacity: 0.82;
+    }
+  }
+  
+  @keyframes wlLightSweep {
+    0% {
+      left: -50%;
+  
+      opacity: 0;
+    }
+  
+    18% {
+      opacity: 0.56;
+    }
+  
+    65% {
+      opacity: 0.20;
+    }
+  
+    100% {
+      left: 130%;
+  
+      opacity: 0;
+    }
+  }
+  
+  @keyframes wlMiniBubble1 {
+    0%,
+    100% {
+      transform:
+        translateY(0);
+    }
+  
+    50% {
+      transform:
+        translateY(-17px);
+    }
+  }
+  
+  @keyframes wlMiniBubble2 {
+    0%,
+    100% {
+      transform:
+        translate(0, 0);
+    }
+  
+    50% {
+      transform:
+        translate(4px, -12px);
+    }
+  }
+  
+  @keyframes wlMiniBubble3 {
+    0%,
+    100% {
+      transform:
+        translateY(0)
+        scale(1);
+    }
+  
+    50% {
+      transform:
+        translateY(-10px)
+        scale(1.10);
+    }
+  }
+  
+  @keyframes wlCardFloat {
+    0%,
+    100% {
+      transform:
+        translateY(0)
+        rotate(0deg);
+    }
+  
+    50% {
+      transform:
+        translateY(-8px)
+        rotate(0.2deg);
+    }
+  }
+  
+  
+  /* ================================= */
+  /* TABLET                            */
+  /* ================================= */
+  
+  @media (max-width: 900px) {
+  
+    .wl-page {
+      background-position:
+        center
+        top;
+    }
+  
+    .wl-main {
+      min-height: auto;
+  
+      grid-template-columns:
+        1fr;
+  
+      gap: 45px;
+  
+      padding:
+        30px
+        20px;
+    }
+  
+    .wl-copy {
+      margin:
+        20px
+        auto
+        0;
+  
+      max-width: 500px;
+    }
+  
+    .wl-title-image {
+      margin: auto;
+    }
+  
+    .wl-bubble-wrap {
+      margin: auto;
+    }
+  
+    .wl-benefits {
+      max-width: 700px;
+  
+      grid-template-columns:
+        repeat(2, 1fr);
+  
+      gap: 18px;
+  
+      margin-top: 40px;
+    }
+  }
+  
+  
+  /* ================================= */
+  /* MOBILE                            */
+  /* ================================= */
+  
+  @media (max-width: 560px) {
+  
+    .wl-page {
+      padding:
+        20px
+        12px;
+  
+      background-position:
+        38%
+        center;
+    }
+  
+    .wl-main {
+      padding:
+        20px
+        0;
+    }
+  
+    .wl-copy {
+      width: 100%;
+      max-width: 360px;
+    }
+  
+    .wl-title-image {
+      width: 100%;
+    }
+  
+    .wl-bubble-wrap {
+      max-width: 390px;
+  
+      min-height: 570px;
+    }
+  
+    .wl-form {
+      min-height: 570px;
+  
+      padding:
+        62px
+        34px
+        38px;
+    }
+  
+    .wl-form h3 {
+      font-size: 25px;
+    }
+  
+    .wl-form-subtitle {
+      font-size: 14px;
+    }
+  
+    .wl-field {
+      height: 50px;
+  
+      grid-template-columns:
+        44px
+        1fr
+        35px;
+    }
+  
+    .wl-field input {
+      font-size: 12px;
+    }
+  
+    .wl-icon-img {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .wl-checks label {
+      font-size: 10px;
+    }
+  
+    .wl-submit {
+      height: 55px;
+  
+      font-size: 17px;
+    }
+  
+    .wl-benefits {
+      max-width: 350px;
+  
+      grid-template-columns:
+        1fr;
+  
+      gap: 18px;
+    }
+  
+    .wl-benefit-card {
+      min-height: 190px;
+    }
+  
+    .wl-benefit-icon-img {
+      width: 108px;
+      height: 108px;
+  
+      transform:
+        scale(1.35);
+    }
+  
+    .wl-benefit-card h3 {
+      font-size: 20px;
+    }
+  
+    .wl-benefit-card p {
+      font-size: 13px;
+    }
+  
+    .wl-bottom-text {
+      font-size: 9px;
+  
+      letter-spacing: 3px;
+    }
+  }
+
+  .wl-benefit-card {
+    background-color: transparent !important;
+  
+    background-image:
+      url("/whitelist/benefit-card.png") !important;
+  
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 100% 100% !important;
+  
+    border: none !important;
+    box-shadow: none !important;
+  
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .wl-benefit-card::before,
+  .wl-benefit-card::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* ================================= */
+/* BENEFIT ICON ANIMATIONS           */
+/* ================================= */
+
+.wl-benefit-icon-img {
+    will-change: transform;
+  }
+  
+  /* Ticket */
+  .wl-benefit-card:nth-child(1) .wl-benefit-icon-img {
+    animation:
+      ticketBounce 3.4s ease-in-out infinite;
+  }
+  
+  /* Chest */
+  .wl-benefit-card:nth-child(2) .wl-benefit-icon-img {
+    animation:
+      chestFloat 3.8s ease-in-out infinite;
+  }
+  
+  /* Crown */
+  .wl-benefit-card:nth-child(3) .wl-benefit-icon-img {
+    animation:
+      crownGlow 3.2s ease-in-out infinite;
+  }
+  
+  /* Pearl */
+  .wl-benefit-card:nth-child(4) .wl-benefit-icon-img {
+    animation:
+      pearlPulse 3.6s ease-in-out infinite;
+  }
+  
+  
+  /* TICKET - little playful bounce */
+  
+  @keyframes ticketBounce {
+    0%,
+    100% {
+      transform:
+        scale(1.42)
+        translateY(0)
+        rotate(-2deg);
+    }
+  
+    50% {
+      transform:
+        scale(1.48)
+        translateY(-7px)
+        rotate(2deg);
+    }
+  }
+  
+  
+  /* CHEST - treasure pop */
+
+.wl-benefit-card:nth-child(2) .wl-benefit-icon-img {
+    animation:
+      chestTreasure 3.6s ease-in-out infinite;
+  }
+  
+  @keyframes chestTreasure {
+    0%,
+    100% {
+      transform:
+        scale(1.42)
+        rotate(0deg);
+  
+      filter:
+        drop-shadow(
+          0 5px 8px rgba(0, 18, 55, 0.25)
+        );
+    }
+  
+    45% {
+      transform:
+        scale(1.48)
+        rotate(-1deg);
+  
+      filter:
+        drop-shadow(
+          0 0 10px rgba(255, 205, 65, 0.55)
+        )
+        drop-shadow(
+          0 0 18px rgba(255, 125, 40, 0.25)
+        );
+    }
+  
+    55% {
+      transform:
+        scale(1.52)
+        rotate(1deg);
+  
+      filter:
+        drop-shadow(
+          0 0 14px rgba(255, 222, 90, 0.80)
+        )
+        drop-shadow(
+          0 0 24px rgba(255, 145, 55, 0.35)
+        );
+    }
+  
+    70% {
+      transform:
+        scale(1.45)
+        rotate(0deg);
+    }
+  }
+  
+  
+  /* CROWN - gentle royal hover */
+  
+  @keyframes crownGlow {
+    0%,
+    100% {
+      transform:
+        scale(1.42)
+        translateY(0);
+  
+      filter:
+        drop-shadow(
+          0 5px 8px rgba(0, 18, 55, 0.25)
+        );
+    }
+  
+    50% {
+      transform:
+        scale(1.52)
+        translateY(-6px);
+  
+      filter:
+        drop-shadow(
+          0 0 14px rgba(95, 224, 255, 0.85)
+        )
+        drop-shadow(
+          0 0 22px rgba(91, 108, 255, 0.45)
+        );
+    }
+  }
+  
+  
+  /* PEARL - soft breathing/pulse */
+  
+  @keyframes pearlPulse {
+    0%,
+    100% {
+      transform:
+        scale(1.42)
+        translateY(0);
+  
+      filter:
+        drop-shadow(
+          0 5px 8px rgba(0, 18, 55, 0.25)
+        );
+    }
+  
+    50% {
+      transform:
+        scale(1.52)
+        translateY(-5px);
+  
+      filter:
+        drop-shadow(
+          0 0 13px rgba(255, 203, 255, 0.85)
+        )
+        drop-shadow(
+          0 0 20px rgba(147, 215, 255, 0.50)
+        );
+    }
+  }
+
+  /* Move benefit card wording down slightly */
+
+.wl-benefit-card h3 {
+    transform: translateY(10px);
+  }
+  
+  .wl-benefit-card p {
+    transform: translateY(10px);
+  }
+
+  .wl-submit-success {
+    background: linear-gradient(
+      180deg,
+      #91ffd0,
+      #36daa0
+    ) !important;
+  
+    color: #063f36 !important;
+  }
+  
+  .wl-submit:disabled {
+    cursor: default;
+  }
+  
+  .wl-submit-message {
+    margin-top: 10px;
+    text-align: center;
+  
+    font-size: 13px;
+    font-weight: 700;
+  }
+  
+  .wl-submit-message.success {
+    color: #d6fff2;
+  }
+  
+  .wl-submit-message.error {
+    color: #ffd3d3;
+  }
+
+  /* =========================
+   BASE / DESKTOP
+   ========================= */
+
+.wl-page {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.wl-main {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* =========================
+   LAPTOP
+   ========================= */
+
+@media (max-width: 1366px) {
+  .wl-main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .wl-title-image {
+    max-width: 560px;
+    width: 100%;
+    height: auto;
+  }
+
+  .wl-bubble-wrap {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .wl-benefits {
+    gap: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1024px) {
+  .wl-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 32px 20px;
+  }
+
+  .wl-copy {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wl-title-image {
+    width: 100%;
+    max-width: 620px;
+  }
+
+  .wl-bubble-wrap {
+    width: 100%;
+    max-width: 560px;
+    min-height: 650px;
+  }
+
+  .wl-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    transform: none !important;
+  }
+}
+
+/* =========================
+   PHONES
+   ========================= */
+
+@media (max-width: 700px) {
+  .wl-page {
+    min-height: 100dvh;
+  }
+
+  .wl-main {
+    padding: 20px 12px;
+    gap: 18px;
+  }
+
+  .wl-title-image {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .wl-bubble-wrap {
+    width: 100%;
+    max-width: 430px;
+    min-height: 680px;
+    margin: 0 auto;
+  }
+
+  .wl-bubble-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .wl-form {
+    width: 84%;
+    max-width: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wl-field {
+    width: 100%;
+  }
+
+  .wl-field input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .wl-benefits {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 14px;
+    padding: 18px 12px 36px;
+  }
+
+  .wl-benefit-card {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .wl-bottom-text {
+    text-align: center;
+    padding: 0 16px 24px;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 420px) {
+  .wl-main {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .wl-bubble-wrap {
+    max-width: 390px;
+    min-height: 700px;
+  }
+
+  .wl-form {
+    width: 86%;
+  }
+
+  .wl-form h3 {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .wl-form-subtitle {
+    font-size: 14px;
+  }
+
+  .wl-field {
+    min-height: 48px;
+  }
+
+  .wl-checks {
+    font-size: 12px;
+  }
+
+  .wl-submit {
+    width: 100%;
+  }
+}
+
+.wl-page {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.wl-main {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Laptop */
+@media (max-width: 1366px) {
+  .wl-main {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .wl-title-image {
+    max-width: 560px;
+    width: 100%;
+    height: auto;
+  }
+
+  .wl-bubble-wrap {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .wl-benefits {
+    gap: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .wl-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 32px 20px;
+  }
+
+  .wl-copy {
+    width: 100%;
+    text-align: center;
+  }
+
+  .wl-title-image {
+    width: 100%;
+    max-width: 620px;
+  }
+
+  .wl-bubble-wrap {
+    width: 100%;
+    max-width: 560px;
+    min-height: 650px;
+  }
+
+  .wl-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    transform: none !important;
+  }
+}
+
+/* Phones */
+@media (max-width: 700px) {
+  .wl-page {
+    min-height: 100dvh;
+  }
+
+  .wl-main {
+    padding: 20px 12px;
+    gap: 18px;
+  }
+
+  .wl-title-image {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .wl-bubble-wrap {
+    width: 100%;
+    max-width: 430px;
+    min-height: 680px;
+    margin: 0 auto;
+  }
+
+  .wl-bubble-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .wl-form {
+    width: 84%;
+    max-width: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wl-field {
+    width: 100%;
+  }
+
+  .wl-field input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .wl-benefits {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 14px;
+    padding: 18px 12px 36px;
+  }
+
+  .wl-benefit-card {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .wl-bottom-text {
+    text-align: center;
+    padding: 0 16px 24px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .wl-main {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .wl-bubble-wrap {
+    max-width: 390px;
+    min-height: 700px;
+  }
+
+  .wl-form {
+    width: 86%;
+  }
+
+  .wl-form h3 {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .wl-form-subtitle {
+    font-size: 14px;
+  }
+
+  .wl-field {
+    min-height: 48px;
+  }
+
+  .wl-checks {
+    font-size: 12px;
+  }
+
+  .wl-submit {
+    width: 100%;
+  }
+}
+
+/* ==================================================
+   LAPTOP RESPONSIVE OVERRIDE
+   ================================================== */
+
+   @media (min-width: 1025px) and (max-width: 1500px) {
+
+    .wl-page {
+      width: 100%;
+      min-height: 100vh;
+      height: auto !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      padding: 25px 30px 35px !important;
+    }
+  
+    .wl-main {
+      position: relative !important;
+  
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      align-items: center !important;
+  
+      width: 100% !important;
+      max-width: 1300px !important;
+  
+      margin: 0 auto !important;
+      padding: 0 !important;
+  
+      gap: 30px !important;
+    }
+  
+    /* LEFT SIDE */
+    .wl-copy {
+      position: relative !important;
+  
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+  
+      width: 100% !important;
+  
+      transform: none !important;
+  
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+  
+    .wl-title-image {
+      position: relative !important;
+  
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+  
+      width: 100% !important;
+      max-width: 600px !important;
+  
+      height: auto !important;
+  
+      transform: none !important;
+    }
+  
+    /* RIGHT APPLICATION BUBBLE */
+    .wl-bubble-wrap {
+      position: relative !important;
+  
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+  
+      width: 100% !important;
+      max-width: 500px !important;
+  
+      min-height: 610px !important;
+  
+      margin: 0 auto !important;
+  
+      transform: none !important;
+    }
+  
+    .wl-bubble-svg {
+      position: absolute !important;
+      inset: 0 !important;
+  
+      width: 100% !important;
+      height: 100% !important;
+    }
+  
+    .wl-form {
+      position: absolute !important;
+  
+      top: 50% !important;
+      left: 50% !important;
+  
+      width: 80% !important;
+      max-width: 365px !important;
+  
+      transform: translate(-50%, -50%) !important;
+    }
+  
+    /* BENEFIT CARDS */
+    .wl-benefits {
+      position: relative !important;
+  
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+  
+      width: 100% !important;
+      max-width: 1300px !important;
+  
+      margin: 20px auto 0 !important;
+      padding: 0 !important;
+  
+      display: grid !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  
+      gap: 15px !important;
+  
+      transform: none !important;
+    }
+  
+    .wl-benefit-card {
+      position: relative !important;
+  
+      top: auto !important;
+      left: auto !important;
+  
+      width: 100% !important;
+  
+      margin: 0 !important;
+  
+      transform: none !important;
+    }
+  
+    .wl-bottom-text {
+      position: relative !important;
+  
+      top: auto !important;
+      left: auto !important;
+  
+      width: 100% !important;
+  
+      margin: 25px auto 0 !important;
+      padding-bottom: 20px !important;
+  
+      text-align: center !important;
+  
+      transform: none !important;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1500px) {
+    .wl-title-image {
+      width: 82% !important;
+      max-width: 500px !important;
+      height: auto !important;
+      transform: none !important;
+    }
+  }
+
+  @media (min-width: 1025px) and (max-width: 1500px) {
+    .wl-main {
+      grid-template-columns: 0.9fr 1.1fr !important;
+      gap: 55px !important;
+    }
+  
+    .wl-copy {
+      justify-content: flex-start !important;
+      padding-left: 10px !important;
+    }
+  
+    .wl-title-image {
+      width: 70% !important;
+      max-width: 430px !important;
+      height: auto !important;
+  
+      transform: translateX(-35px) !important;
+    }
+  }
+
+  @media (min-width: 1501px) {
+    .wl-benefits {
+      margin-top: 70px !important;
+    }
+  
+    .wl-bottom-text {
+      margin-top: 50px !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .wl-page {
+      width: 100%;
+      min-height: 100dvh;
+      height: auto !important;
+  
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+  
+      padding: 18px 10px 30px !important;
+  
+      background-position: center top !important;
+      background-size: cover !important;
+    }
+  
+    .wl-main {
+      position: relative !important;
+  
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+  
+      width: 100% !important;
+  
+      gap: 12px !important;
+  
+      padding: 0 !important;
+      margin: 0 auto !important;
+    }
+  
+    /* TITLE / LEFT ART */
+    .wl-copy {
+      position: relative !important;
+  
+      width: 100% !important;
+  
+      display: flex !important;
+      justify-content: center !important;
+  
+      top: auto !important;
+      left: auto !important;
+  
+      transform: none !important;
+    }
+  
+    .wl-title-image {
+      position: relative !important;
+  
+      width: 78% !important;
+      max-width: 310px !important;
+      height: auto !important;
+  
+      top: auto !important;
+      left: auto !important;
+  
+      transform: none !important;
+  
+      margin: 0 auto !important;
+    }
+  
+    /* APPLICATION BUBBLE */
+    .wl-bubble-wrap {
+      position: relative !important;
+  
+      width: 96% !important;
+      max-width: 390px !important;
+  
+      min-height: 570px !important;
+  
+      top: auto !important;
+      left: auto !important;
+  
+      margin: -10px auto 0 !important;
+  
+      transform: none !important;
+    }
+  
+    .wl-bubble-svg {
+      position: absolute !important;
+      inset: 0 !important;
+  
+      width: 100% !important;
+      height: 100% !important;
+    }
+  
+    .wl-form {
+      position: absolute !important;
+  
+      top: 50% !important;
+      left: 50% !important;
+  
+      width: 78% !important;
+      max-width: 310px !important;
+  
+      transform: translate(-50%, -50%) !important;
+    }
+  
+    .wl-form h3 {
+      font-size: 25px !important;
+      line-height: 1.05 !important;
+    }
+  
+    .wl-form-subtitle {
+      font-size: 13px !important;
+    }
+  
+    .wl-field {
+      width: 100% !important;
+      min-height: 46px !important;
+    }
+  
+    .wl-field input {
+      width: 100% !important;
+      min-width: 0 !important;
+  
+      font-size: 12px !important;
+    }
+  
+    .wl-checks {
+      font-size: 10px !important;
+      line-height: 1.25 !important;
+    }
+  
+    .wl-submit {
+      width: 100% !important;
+  
+      font-size: 16px !important;
+      min-height: 48px !important;
+    }
+  
+    /* BENEFITS — 2 x 2 LIKE DESKTOP */
+    .wl-benefits {
+      position: relative !important;
+  
+      width: 100% !important;
+  
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  
+      gap: 10px !important;
+  
+      top: auto !important;
+      left: auto !important;
+  
+      margin: 18px auto 0 !important;
+      padding: 0 4px !important;
+  
+      transform: none !important;
+    }
+  
+    .wl-benefit-card {
+      position: relative !important;
+  
+      width: 100% !important;
+      min-width: 0 !important;
+  
+      margin: 0 !important;
+  
+      transform: none !important;
+    }
+  
+    .wl-benefit-icon-img {
+      max-width: 85px !important;
+    }
+  
+    .wl-benefit-card h3 {
+      font-size: 13px !important;
+    }
+  
+    .wl-benefit-card p {
+      font-size: 9px !important;
+      line-height: 1.2 !important;
+    }
+  
+    .wl-bottom-text {
+      position: relative !important;
+  
+      width: 100% !important;
+  
+      margin: 18px auto 0 !important;
+      padding: 0 10px 20px !important;
+  
+      text-align: center !important;
+  
+      font-size: 10px !important;
+      letter-spacing: 4px !important;
+  
+      transform: none !important;
+    }
+  }
+
+  @media (min-width: 1501px) {
+    .wl-copy {
+      justify-content: center !important;
+      text-align: center !important;
+    }
+  
+    .wl-title-image {
+      margin: 0 auto !important;
+      transform: translateX(35px) !important;
+    }
+  }

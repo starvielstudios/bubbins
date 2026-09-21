@@ -8,35 +8,30 @@ export default function Home() {
   return (
     <main>
 
-      {/* =====================================================
-          HERO
-      ====================================================== */}
+     {/* =====================================================
+                    HERO
+====================================================== */}
 
-      <section className="hero">
-        <nav className="navbar">
-          <div className="navInner">
+<section className="hero">
 
-            <a href="/" className="logo">
-              <img src="/bubbins-logo.png" alt="Bubbins" />
-            </a>
+<nav className="navbar">
+  <div className="navInner">
 
-            <div className="navLinks">
-              <a href="/">Home</a>
-              <a href="#about">About</a>
-              <a href="#how">How It Works</a>
-              <a href="#features">Fish Packs</a>
-              <a href="/coming-soon">Breeding</a>
-              <a href="/coming-soon">Marketplace</a>
-              <a href="/coming-soon">Token</a>
-              <a href="#faq">FAQ</a>
-            </div>
+    <a href="/" className="logo">
+      <img src="/bubbins-logo.png" alt="Bubbins" />
+    </a>
 
-            <a href="/coming-soon" className="playNav">
-              Play Now →
-            </a>
+    <div className="navLinks">
+      <a href="/">Home</a>
+      <a href="/whitelist">Whitelist</a>
+    </div>
 
-          </div>
-        </nav>
+    <a href="/coming-soon" className="playNav">
+      Play Now →
+    </a>
+
+  </div>
+</nav>
 
 
         <div className="heroContent">

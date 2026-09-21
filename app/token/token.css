@@ -1,0 +1,441 @@
+/* ========================================
+   BUBBINS TOKEN PAGE
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ========================================
+   MAIN TOKEN PAGE
+======================================== */
+
+.token-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #061a2b;
+}
+
+
+/* ========================================
+   BACKGROUND IMAGE
+======================================== */
+
+.token-background {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   COIN POSITION
+======================================== */
+
+.coin-position {
+  position: absolute;
+
+  /*
+    LEFT / RIGHT POSITION
+
+    50% = exact horizontal center
+  */
+  left: 50%;
+
+
+  /*
+    UP / DOWN POSITION
+
+    Change this number if needed.
+
+    Smaller = move UP
+    Larger  = move DOWN
+  */
+  top: 51%;
+
+
+  transform: translate(-50%, -50%);
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   BUBBINS COIN
+======================================== */
+
+.token-coin {
+  display: block;
+
+  width: clamp(90px, 8vw, 160px);
+  height: auto;
+
+  object-fit: contain;
+
+  animation:
+    bubbinsCoinFloat 3s ease-in-out infinite,
+    bubbinsCoinGlow 2.5s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 215, 70, 0.75))
+    drop-shadow(0 0 18px rgba(65, 205, 255, 0.75))
+    drop-shadow(0 0 32px rgba(50, 150, 255, 0.45));
+
+  will-change: transform, filter;
+}
+
+
+/* ========================================
+   COIN FLOAT ANIMATION
+======================================== */
+
+@keyframes bubbinsCoinFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0px)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scale(1.035);
+  }
+
+}
+
+
+/* ========================================
+   COIN GLOW ANIMATION
+======================================== */
+
+@keyframes bubbinsCoinGlow {
+
+  0%,
+  100% {
+    filter:
+      drop-shadow(0 0 8px rgba(255, 215, 70, 0.7))
+      drop-shadow(0 0 18px rgba(65, 205, 255, 0.65))
+      drop-shadow(0 0 28px rgba(50, 150, 255, 0.4));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 12px rgba(255, 225, 90, 0.95))
+      drop-shadow(0 0 28px rgba(80, 220, 255, 0.95))
+      drop-shadow(0 0 48px rgba(50, 160, 255, 0.65));
+  }
+
+}
+
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (max-width: 1440px) {
+
+  .coin-position {
+    top: 51%;
+  }
+
+  .token-coin {
+    width: clamp(85px, 8vw, 140px);
+  }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .coin-position {
+    top: 51%;
+  }
+
+  .token-coin {
+    width: clamp(70px, 10vw, 110px);
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .token-page {
+    min-height: auto;
+  }
+
+  .coin-position {
+    left: 50%;
+    top: 51%;
+  }
+
+  .token-coin {
+    width: clamp(55px, 13vw, 85px);
+  }
+
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .token-coin {
+    animation: none;
+  }
+
+}
+
+/* ========================================
+   BUBBINS TOKEN PAGE
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ========================================
+   MAIN TOKEN PAGE
+======================================== */
+
+.token-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #061a2b;
+}
+
+
+/* ========================================
+   BACKGROUND IMAGE
+======================================== */
+
+.token-background {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   COIN POSITION
+======================================== */
+
+.coin-position {
+  position: absolute;
+
+  /*
+    LEFT / RIGHT POSITION
+
+    50% = exact horizontal center
+  */
+  left: 50%;
+
+
+  /*
+    UP / DOWN POSITION
+
+    Change this number if needed.
+
+    Smaller = move UP
+    Larger  = move DOWN
+  */
+  top: 51%;
+
+
+  transform: translate(-50%, -50%);
+
+  z-index: 20;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   BUBBINS COIN
+======================================== */
+
+.token-coin {
+  display: block;
+
+  width: clamp(90px, 8vw, 160px);
+  height: auto;
+
+  object-fit: contain;
+
+  animation:
+    bubbinsCoinFloat 3s ease-in-out infinite,
+    bubbinsCoinGlow 2.5s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 215, 70, 0.75))
+    drop-shadow(0 0 18px rgba(65, 205, 255, 0.75))
+    drop-shadow(0 0 32px rgba(50, 150, 255, 0.45));
+
+  will-change: transform, filter;
+}
+
+
+/* ========================================
+   COIN FLOAT ANIMATION
+======================================== */
+
+@keyframes bubbinsCoinFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0px)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      scale(1.035);
+  }
+
+}
+
+
+/* ========================================
+   COIN GLOW ANIMATION
+======================================== */
+
+@keyframes bubbinsCoinGlow {
+
+  0%,
+  100% {
+    filter:
+      drop-shadow(0 0 8px rgba(255, 215, 70, 0.7))
+      drop-shadow(0 0 18px rgba(65, 205, 255, 0.65))
+      drop-shadow(0 0 28px rgba(50, 150, 255, 0.4));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 12px rgba(255, 225, 90, 0.95))
+      drop-shadow(0 0 28px rgba(80, 220, 255, 0.95))
+      drop-shadow(0 0 48px rgba(50, 160, 255, 0.65));
+  }
+
+}
+
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (max-width: 1440px) {
+
+  .coin-position {
+    top: 51%;
+  }
+
+  .token-coin {
+    width: clamp(85px, 8vw, 140px);
+  }
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .coin-position {
+    top: 51%;
+  }
+
+  .token-coin {
+    width: clamp(70px, 10vw, 110px);
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .token-page {
+    min-height: auto;
+  }
+
+  .coin-position {
+    left: 50%;
+    top: 51%;
+  }
+
+  .token-coin {
+    width: clamp(55px, 13vw, 85px);
+  }
+
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .token-coin {
+    animation: none;
+  }
+
+}
+
+{/* CENTER BUBBINS COIN */}
